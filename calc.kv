@@ -1,0 +1,107 @@
+# <Welcome>:
+
+#     username: name
+#     GridLayout:
+#         cols: 1
+#         size: root.width, root.height
+#         GridLayout:
+#             cols: 2
+#             Label:
+#                 text: "Welcome, please enter your name:"
+#             TextInput:
+#                 id: name
+#                 multiline: False
+#         Button:
+#             text: "Go"
+#             size_hint_y: 0.3
+#             on_press: root.name_checker()
+
+<Button>:
+    size_hint: 0.25, 0.2
+<Calculator>:
+    screen: screen
+    result: result
+    FloatLayout:
+        size: root.width, root.height
+        TextInput:
+            id: screen
+            font_size: 30
+            size_hint: 1, 0.2
+            pos_hint: {"y": 0.8}
+        Label:
+            id: result
+            size_hint: 0.4, 0.1
+            pos_hint: {"x": 0.6, "y": 0.8}
+            color: "black"
+            background_color: (220/255, 220/255, 220/255, .5)
+            font_size: 40
+            text_size: self.size
+            halign: "right"
+            valign: "center"
+			canvas.before:
+				Color:
+					rgba: self.background_color
+				Rectangle:
+					size: self.size
+					pos: self.pos
+        Button:
+            text: "0"
+            on_press: root.add("0")
+        Button:
+            pos_hint: {"y": 0.2}
+            text: "1"
+            on_press: root.add("1")
+        Button:
+            pos_hint: {"x": 0.25, "y": 0.2}
+            on_press: root.add("2")
+            text: "2"
+        Button:
+            pos_hint: {"x": 0.50, "y": 0.2}
+            on_press: root.add("3")
+            text: "3"
+        Button:
+            pos_hint: {"y": 0.4}
+            on_press: root.add("4")
+            text: "4"
+        Button:
+            pos_hint: {"x": 0.25, "y": 0.4}
+            on_press: root.add("5")
+            text: "5"
+        Button:
+            pos_hint: {"x": 0.50, "y": 0.4}
+            on_press: root.add("6")
+            text: "6"
+        Button:
+            pos_hint: {"y": 0.6}
+            on_press: root.add("7")
+            text: "7"
+        Button:
+            pos_hint: {"x": 0.25, "y": 0.6}
+            on_press: root.add("8")
+            text: "8"
+        Button:
+            pos_hint: {"x": 0.50, "y": 0.6}
+            on_press: root.add("9")
+            text: "9"
+        Button:
+            pos_hint: {"x": 0.75, "y": 0.6}
+            on_press: root.add("-")
+            text: "-"
+        Button:
+            pos_hint: {"x": 0.75, "y": 0.4}
+            on_press: root.add("+")
+            text: "+"
+        Button:
+            pos_hint: {"x": 0.75, "y": 0.2}
+            on_press: root.add("*")
+            text: "*"
+        Button:
+            pos_hint: {"x": 0.75}
+            on_press: root.add("/")
+            text: "/"
+        Button:
+            pos_hint: {"x": 0.25}
+            size_hint_x: 0.5
+            on_press: root.calculate()
+            background_color: 0.9, 0.9, 0.9, 1
+            text: "="

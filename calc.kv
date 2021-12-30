@@ -1,21 +1,3 @@
-# <Welcome>:
-
-#     username: name
-#     GridLayout:
-#         cols: 1
-#         size: root.width, root.height
-#         GridLayout:
-#             cols: 2
-#             Label:
-#                 text: "Welcome, please enter your name:"
-#             TextInput:
-#                 id: name
-#                 multiline: False
-#         Button:
-#             text: "Go"
-#             size_hint_y: 0.3
-#             on_press: root.name_checker()
-
 <Button>:
     size_hint: 0.25, 0.2
 <Calculator>:
@@ -101,7 +83,11 @@
             text: "/"
         Button:
             pos_hint: {"x": 0.25}
-            size_hint_x: 0.5
+            on_press: root.add(".")
+            text: "."
+        Button:
+            pos_hint: {"x": 0.50}
+            size_hint_x: 0.25
             on_press: root.calculate()
             background_color: 0.9, 0.9, 0.9, 1
             text: "="
